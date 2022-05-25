@@ -1,8 +1,12 @@
-import Board from "./components/Board";
+import Board from "./components/Board"
+import './App.css'
 function App() {
-  Board()
+  // Board()
   return(
-    <div>Minesweeper VS</div>
+    <div className="app">
+      <h1>Monkey Sweeper</h1>
+      <Board />
+    </div>
   );
 }
 
