@@ -26,6 +26,7 @@ const style = {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        userSelect: "none"
+        userSelect: "none",
+        outline: "none"
     }
 }
