@@ -6,11 +6,11 @@ import Tile from './Tile.js'
 var mousedOverX = null;
 var mousedOverY = null;
 const boardSizeX = 10;
-const boardSizeY = 10;
-const minesNum = 12;
+const boardSizeY = 21;
+const minesNum = 25;
 const flagCount = minesNum;
 
-const Board = () => {
+export default function Board () {
     // state is rendered initially as an empty array
     const [grid, setGrid] = useState([])
     const [origGrid, setOrigGrid] = useState([])
@@ -25,7 +25,6 @@ const Board = () => {
             setNonMineCount(boardSizeX * boardSizeY - minesNum)
             setGrid(newBoard.board)
             setOrigGrid(newBoard.board)
-            console.log("here")
         }
         newBoard()
     }, []);
@@ -77,7 +76,7 @@ const Board = () => {
         let newGrid = JSON.parse(JSON.stringify(grid))
         if(newGrid[x][y].revealed == false){
             if(newGrid[x][y].value == "X"){
-                alert("Game ended")
+                alert("Game ended!")
                 for(let i = 0; i < mineLocation.length; i++){
                     newGrid[mineLocation[i][0]][mineLocation[i][1]].value = "X"
                     newGrid[mineLocation[i][0]][mineLocation[i][1]].revealed = true
@@ -110,5 +109,3 @@ const Board = () => {
         </div>)
     });
 }
-
-export default Board;

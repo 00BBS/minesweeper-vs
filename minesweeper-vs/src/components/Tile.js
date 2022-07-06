@@ -1,8 +1,6 @@
 import React, {useState, useEffect, cloneElement} from 'react'
 
 export default function Tile({TileData, flagUpdate, revealTile, mouseIn, mouseOut, spacePressed}){
-
-
     return (
         <div 
             onContextMenu={(e)=>flagUpdate(e, TileData.x, TileData.y)} 
